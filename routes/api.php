@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryControllers\CategoryListController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::middleware('validate.xapikey')->group(function () {
+    // Categories Routes
+    Route::prefix('categories')->group(function (){
+        Route::get('/', CategoryListController::class);
+    });
+
 });
