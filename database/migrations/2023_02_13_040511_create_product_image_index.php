@@ -27,8 +27,8 @@ return new class extends Migration
     public function down()
     {
         Schema::table('product_image', function (Blueprint $table) {
-            $table->dropIndex('product_id');
-            $table->dropIndex('image_id');
+            $table->dropIndex(['product_id']);
+            $table->dropIndex(['image_id']);
         });
     }
 };
