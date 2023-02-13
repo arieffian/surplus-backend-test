@@ -9,7 +9,8 @@ class CategoryListController extends BaseController
 {
     public function __invoke()
     {
+        //TODO: Implement pagination
         $categories = Category::where('enable', true)->get(['id', 'name']);
-        return response()->json($categories);
+        return $this->generateResponse(200, 'OK', $categories);
     }
 }
