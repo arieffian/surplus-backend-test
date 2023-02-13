@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name')->nullable(false);
             $table->string('description')->nullable(false);
-            $table->boolean('enabled')->nullable(false);
+            $table->boolean('enable')->nullable(false);
         });
     }
 

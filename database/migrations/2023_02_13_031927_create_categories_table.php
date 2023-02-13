@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable(false);
-            $table->boolean('enabled')->nullable(false);
+            $table->boolean('enable')->nullable(false);
         });
     }
 
