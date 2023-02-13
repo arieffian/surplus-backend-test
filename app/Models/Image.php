@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Image extends Model
 {
     protected $table = 'images';
-    protected $fillable = ['name', 'description', 'enable'];
+    protected $fillable = ['name', 'file', 'enable'];
+    public $timestamps = false;
  
     public function products()
     {
