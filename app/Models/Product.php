@@ -9,6 +9,7 @@ class Product extends Model
     protected $table = 'products';
     protected $fillable = ['name', 'description', 'enable'];
     public $timestamps = false;
+    protected $hidden = ['pivot'];
  
     public function categories()
     {

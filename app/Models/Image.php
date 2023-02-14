@@ -9,6 +9,7 @@ class Image extends Model
     protected $table = 'images';
     protected $fillable = ['name', 'file', 'enable'];
     public $timestamps = false;
+    protected $hidden = ['pivot'];
  
     public function products()
     {
