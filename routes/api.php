@@ -5,8 +5,11 @@ use App\Http\Controllers\CategoryControllers\CategoryListController;
 use App\Http\Controllers\CategoryControllers\CreateCategoryController;
 use App\Http\Controllers\CategoryControllers\DeleteCategoryController;
 use App\Http\Controllers\CategoryControllers\UpdateCategoryController;
+use App\Http\Controllers\ImageControllers\CreateImageController;
+use App\Http\Controllers\ImageControllers\DeleteImageController;
 use App\Http\Controllers\ImageControllers\ImageDetailController;
 use App\Http\Controllers\ImageControllers\ImageListController;
+use App\Http\Controllers\ImageControllers\UpdateImageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,6 +37,9 @@ Route::middleware('validate.xapikey')->group(function () {
     Route::prefix('images')->group(function (){
         Route::get('/', ImageListController::class);
         Route::get('/{id}', ImageDetailController::class);
+        Route::post('/', CreateImageController::class);
+        Route::put('/{id}', UpdateImageController::class);
+        Route::delete('/{id}', DeleteImageController::class);
     });
 
 });

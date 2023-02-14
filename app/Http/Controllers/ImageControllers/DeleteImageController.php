@@ -1,22 +1,22 @@
 <?php
 
-namespace App\Http\Controllers\CategoryControllers;
+namespace App\Http\Controllers\ImageControllers;
 
 use App\Http\Controllers\Controller as BaseController;
-use App\Models\Category;
+use App\Models\Image;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
 
-class DeleteCategoryController extends BaseController
+class DeleteImageController extends BaseController
 {
     public function __invoke(Request $request, $id)
     {
-        $category = Category::find($id);
-        if ($category === null) {
+        $image = Image::find($id);
+        if ($image === null) {
             return $this->generateResponse(404, 'Error: ID not found', []);
         }
 
-        $category->delete();
+        $image->delete();
+        //TODO: delete image file
         //TODO: detach from product
 
         return $this->generateResponse(202, 'OK', []);
