@@ -2,7 +2,8 @@
 
 use App\Http\Controllers\CategoryControllers\CategoryDetailController;
 use App\Http\Controllers\CategoryControllers\CategoryListController;
-use Illuminate\Http\Request;
+use App\Http\Controllers\ImageControllers\ImageDetailController;
+use App\Http\Controllers\ImageControllers\ImageListController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,6 +22,12 @@ Route::middleware('validate.xapikey')->group(function () {
     Route::prefix('categories')->group(function (){
         Route::get('/', CategoryListController::class);
         Route::get('/{id}', CategoryDetailController::class);
+    });
+
+    // Images Routes
+    Route::prefix('images')->group(function (){
+        Route::get('/', ImageListController::class);
+        Route::get('/{id}', ImageDetailController::class);
     });
 
 });
