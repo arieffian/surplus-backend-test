@@ -24,7 +24,7 @@ class CategoryDetailController extends BaseController
         }
 
         $category = Category::where('enable', true)->where('id', $id)->first(['id', 'name']);
-        if (count($category) === 0) {
+        if ($category === null) {
             return $this->generateResponse(404, 'Error: ID not found', []);
         }
         return $this->generateResponse(200, 'OK', $category);
