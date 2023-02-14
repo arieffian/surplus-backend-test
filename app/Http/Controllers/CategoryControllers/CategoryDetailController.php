@@ -23,7 +23,7 @@ class CategoryDetailController extends BaseController
             return $this->generateResponse(400, 'Validation Error', $validator->errors());
         }
 
-        $category = Category::where('enable', true)->where('id', $id)->get(['id', 'name']);
+        $category = Category::where('enable', true)->where('id', $id)->first(['id', 'name']);
         if (count($category) === 0) {
             return $this->generateResponse(404, 'Error: ID not found', []);
         }
