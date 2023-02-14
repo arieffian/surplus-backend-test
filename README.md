@@ -1,5 +1,4 @@
 # Surplus.id Backend Test
----
 
 ## Prerequisites
 1. [PHP 8.x](https://www.php.net/)
